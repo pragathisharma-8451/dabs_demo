@@ -25,6 +25,7 @@ jobs:
       - name: Deploy
         run: |
           echo "Deploying"
+          databricks bundle validate
           databricks bundle deploy
         env:
           DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
